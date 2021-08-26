@@ -1,8 +1,12 @@
-<input
-	type="text"
-	nbInput
-	placeholder="Nome"
-	[formControl]="name"
-	[status]="name.valid ? 'basic' : 'danger'"
-/>
-<button nbButton status="success" (click)="login()">Parece Bom</button>
+<div class="container">
+	<input
+		type="text"
+		class="input-name"
+		nbInput
+		[fullWidth]="true"
+		placeholder="Nome"
+		[formControl]="name"
+		[status]="!name.valid && name.touched ? 'danger' : 'basic'"
+	/>
+	<button nbButton status="success" (click)="login()">Parece Bom</button>
+</div>

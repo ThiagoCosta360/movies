@@ -9,7 +9,6 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ListItemComponent } from './list/list-item/list-item.component';
 import { CarouselItemComponent } from './carousel/carousel-item/carousel-item.component';
 import { SwiperModule } from 'swiper/angular';
-import { RotationComponent } from './rotation/rotation.component';
 
 @NgModule({
 	declarations: [
@@ -18,7 +17,6 @@ import { RotationComponent } from './rotation/rotation.component';
 		CarouselComponent,
 		ListItemComponent,
 		CarouselItemComponent,
-		RotationComponent
 	],
 	imports: [
 		CommonModule,

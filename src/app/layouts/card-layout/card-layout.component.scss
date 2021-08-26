@@ -1,0 +1,21 @@
+.background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+
+	nb-card {
+		padding: 0.5rem;
+		nb-card-header {
+			font-size: 2.7rem;
+			width: auto;
+			@media (max-width: 730px) {
+				font-size: 2rem;
+			}
+		}
+		nb-card-body {
+			padding: 3rem 2rem;
+		}
+	}
+}

@@ -8,11 +8,13 @@ import { AuthService } from 'src/app/resources/services/auth.service';
 	styleUrls: ['./identification.component.scss']
 })
 export class IdentificationComponent implements OnInit {
-	public name = new FormControl('', [Validators.required, Validators.minLength(3)])
+	public name: FormControl
 
 	constructor(
 		private authService: AuthService
-	) { }
+	) { 
+		this.name = new FormControl('', [Validators.required, Validators.minLength(3)]);
+	}
 
 	ngOnInit(): void {
 	}
@@ -20,7 +22,9 @@ export class IdentificationComponent implements OnInit {
 	login(): void {
 		if (this.name.valid){
 			this.authService.login(this.name.value);
-		} 
+		} else {
+			this.name.markAsTouched();
+		}
 	}
 
 }
