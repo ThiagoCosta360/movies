@@ -24,9 +24,9 @@ export class LocalStorageService {
 	}
 
 	private getItem(key: any): string {
-		let returnitem
-		returnitem = localStorage.getItem((key))
-		if (!returnitem) returnitem=''
+		let returnitem;
+		returnitem = localStorage.getItem((key));
+		if (!returnitem) returnitem='';
 		return returnitem;
 	}
 

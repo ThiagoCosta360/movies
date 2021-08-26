@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MiscellaneousComponent } from './miscellaneous.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ServerErrorComponent } from './server-error/server-error.component';
 
 const routes: Routes = [
 	{
@@ -13,10 +12,6 @@ const routes: Routes = [
 			{
 				path: '404',
 				component: NotFoundComponent,
-			},
-			{
-				path: '500',
-				component: ServerErrorComponent,
 			},
 			{
 				path: '',

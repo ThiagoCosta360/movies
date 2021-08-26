@@ -5,10 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbSidebarModule, NbMenuModule } from '@nebular/theme';
-import { AuthModule } from './pages/auth/auth.module';
-import { MiscellaneousModule } from './pages/miscellaneous/miscellaneous.module';
-import { DashboardModule } from './pages/dashboard/dashboard.module';
-
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -20,9 +16,6 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
 		NbThemeModule.forRoot({ name: 'corporate' }),
 		NbSidebarModule.forRoot(),
 		NbMenuModule.forRoot(),
-		AuthModule,
-		DashboardModule,
-		MiscellaneousModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

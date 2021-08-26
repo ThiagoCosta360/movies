@@ -1,6 +1,9 @@
-<img [src]="movie.poster" />
-<div>{{ movie.nome }}</div>
-<div>{{ movie.ano }}</div>
-<div>{{ movie.diretor }}</div>
-<div>{{ movie.genero }}</div>
-<div>{{ movie.descricao }}</div>
+<div class="item-container">
+	<img class="poster" [src]="movie.poster" />
+	<div class="info">
+		<h1>{{ movie.nome }}</h1>
+		<h5>{{ movie.diretor }}</h5>
+		<div>{{ movie.genero }} - {{ movie.ano }}</div>
+		<div>{{ movie.descricao }}</div>
+	</div>
+</div>

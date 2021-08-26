@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { NbMenuItem, NbMenuService, NbThemeService } from '@nebular/theme';
+import { NbMenuItem, NbMenuService, NbSearchService, NbThemeService } from '@nebular/theme';
 import { AuthService } from 'src/app/resources/services/auth.service';
 import { LocalStorageService } from 'src/app/resources/services/local-storage.service';
 import { filter, map } from 'rxjs/operators';
@@ -12,6 +12,7 @@ import { filter, map } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
 	@Output() toggleSidebar = new EventEmitter<void>()
 	public currentIcon = '';
+	public search = ''
 	public user: string
 	public items: NbMenuItem[] = [
 		{ title: 'Profile',
@@ -23,13 +24,19 @@ export class HeaderComponent implements OnInit {
 	];
 
 	constructor(
-		private readonly themeService: NbThemeService,
-		private readonly storage: LocalStorageService,
-		private readonly nbMenuService: NbMenuService, 
-		private readonly authService: AuthService,
+	private readonly themeService: NbThemeService,
+	private readonly storage: LocalStorageService,
+	private readonly nbMenuService: NbMenuService, 
+	private readonly authService: AuthService,
+	private readonly searchService: NbSearchService
 	) {
 		this.user = authService.user;
+		
+		this.subscribeSearch();
+		this.subscribeMenu();
+	}
 
+	private subscribeMenu(): void {
 		this.nbMenuService.onItemClick()
 			.pipe(
 				filter(({ tag }) => tag === 'my-context-menu'),
@@ -42,11 +49,25 @@ export class HeaderComponent implements OnInit {
 					this.authService.logout();
 				}
 			});
-	 }
+	}
 
+	private subscribeSearch(): void {
+		this.searchService.onSearchSubmit()
+			.subscribe(
+				(search) => {
+					this.search = search.term;
+				},
+				(error) => console.error(error)
+			);
+	}
+
+	public openSearch(): void {
+		this.searchService.activateSearch('');
+	}
+		
 	ngOnInit(): void {
 		let currentTheme = this.themeService.currentTheme;
-
+			
 		if (this.storage.has(this.storage.keys.THEME)) {
 			const storageTheme = this.storage.get(this.storage.keys.THEME);
 			if (storageTheme !== currentTheme) {
@@ -58,17 +79,18 @@ export class HeaderComponent implements OnInit {
 		}
 		this.currentIcon = currentTheme === 'dark' ? 'sun' : 'moon';
 	}
-	
-
+		
+		
 	toggleTheme(): void {
 		let currentTheme = this.themeService.currentTheme;
-		
+			
 		currentTheme = currentTheme === 'dark' ? 'corporate' : 'dark';
 		this.currentIcon = currentTheme === 'dark' ? 'sun' : 'moon';
-		
+			
 		this.storage.set(this.storage.keys.THEME, currentTheme);
 		this.themeService.changeTheme(currentTheme);
 	}
-
-
+		
+		
 }
+	

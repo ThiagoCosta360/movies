@@ -6,7 +6,18 @@
 		<span class="logo">MOVIES</span>
 	</div>
 	<nb-actions size="medium" class="options-container">
-		<nb-action disabled icon="search-outline"></nb-action>
+		<nb-action>
+			<nb-form-field>
+				<nb-search
+					nbPrefix
+					class="search"
+					placeholder="Buscar Título"
+					type="rotate-layout"
+				>
+				</nb-search>
+				<input nbInput type="text" (click)="openSearch()" [value]="search" />
+			</nb-form-field>
+		</nb-action>
 		<nb-action
 			nbButton
 			class="theme-button"

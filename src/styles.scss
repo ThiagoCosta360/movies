@@ -1,8 +1,12 @@
-@import 'themes';
+@import "themes";
 
-@import '~@nebular/theme/styles/globals';
+@import "~@nebular/theme/styles/globals";
+
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
 
 @include nb-install() {
-  @include nb-theme-global();
-};
+	@include nb-theme-global();
+}
 /* You can add global styles to this file, and also import other style files */

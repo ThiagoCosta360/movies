@@ -4,13 +4,19 @@ import { MoviesResolver } from 'src/app/resources/resolvers/movies.resolver';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DashboardComponent } from './dashboard.component';
 import { ListComponent } from './list/list.component';
+import { RotationComponent } from './rotation/rotation.component';
 
 const routes: Routes = [
 	{ path: '',
 		component: DashboardComponent,
 		children: [
 			{
-				path: 'carrossel',
+				path: 'rotation',
+				component: RotationComponent,
+				resolve: { movies: MoviesResolver}
+			},
+			{
+				path: 'carousel',
 				component: CarouselComponent,
 				resolve: { movies: MoviesResolver}
 			},
@@ -21,7 +27,7 @@ const routes: Routes = [
 			},
 			{
 				path: '',
-				redirectTo: 'carrossel',
+				redirectTo: 'rotation',
 				pathMatch: 'full'
 			}
 		]

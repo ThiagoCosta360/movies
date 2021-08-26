@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'app-miscellaneous',
-	template: `
-    <router-outlet></router-outlet>
-  `,
+	templateUrl: './miscellaneous.component.html',
+	styleUrls: ['./miscellaneous.component.scss']
 })
 export class MiscellaneousComponent {
 }

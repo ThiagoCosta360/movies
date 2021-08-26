@@ -36,5 +36,12 @@
 		flex-direction: row;
 		align-items: center;
 		margin-right: 25px;
+		nb-search {
+			button {
+				nb-icon {
+					font-size: 3rem;
+				}
+			}
+		}
 	}
 }

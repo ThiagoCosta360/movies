@@ -9,13 +9,18 @@ import { NbMenuItem } from '@nebular/theme';
 export class DashboardComponent {
 	menu: NbMenuItem[] = [
 		{
-			title: 'carrosel',
-			link: 'carrossel',
-			icon: 'swap-outline',
+			title: 'CARD ROTATIVO',
+			link: 'rotation',
+			icon: 'undo-outline',
 			home: true
 		},
 		{
-			title: 'list',
+			title: 'CARROSSEL',
+			link: 'carousel',
+			icon: 'swap-outline',
+		},
+		{
+			title: 'LISTA',
 			link: 'list',
 			icon: 'list-outline'
 		}

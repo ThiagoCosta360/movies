@@ -1,5 +1,7 @@
-<nb-card>
-	<nb-card-header> Lista de Filmes </nb-card-header>
+<nb-card class="card">
+	<nb-card-header>
+		<h1>Lista de Filmes</h1>
+	</nb-card-header>
 	<nb-card-body>
 		<app-list-item *ngFor="let movie of movies" [movie]="movie"></app-list-item>
 	</nb-card-body>

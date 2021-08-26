@@ -1,0 +1,20 @@
+.item-container {
+	display: flex;
+	flex-direction: row;
+	padding: 0 20vh 50px 0;
+
+	.poster {
+		height: 20vh;
+	}
+
+	.info {
+		margin: 0 0 0 20px;
+		h1 {
+			margin: 0;
+		}
+		h5 {
+			margin: 0;
+			padding-bottom: 100px;
+		}
+	}
+}

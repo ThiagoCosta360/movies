@@ -1,9 +1,20 @@
 <nb-card>
-	<nb-card-header> Carousel de Filmes </nb-card-header>
+	<nb-card-header class="header">
+		<h1>Carrossel de Filmes</h1>
+	</nb-card-header>
 	<nb-card-body>
-		<app-carousel-item
-			*ngFor="let movie of movies"
-			[movie]="movie"
-		></app-carousel-item>
+		<swiper
+			[navigation]="true"
+			class="mySwiper"
+			[pagination]="true"
+			[spaceBetween]="50"
+		>
+			<ng-template swiperSlide *ngFor="let movie of movies">
+				<app-carousel-item [movie]="movie"> </app-carousel-item>
+			</ng-template>
+		</swiper>
+		<div *ngIf="movies.length <= 0" class="not-found">
+			Nenhum filme encontrado na busca :(
+		</div>
 	</nb-card-body>
 </nb-card>
