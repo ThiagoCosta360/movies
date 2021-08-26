@@ -15,9 +15,6 @@ export class HeaderComponent implements OnInit {
 	public search = ''
 	public user: string
 	public items: NbMenuItem[] = [
-		{ title: 'Profile',
-			icon: 'person-outline'
-		},
 		{ title: 'Logout',
 			icon: 'log-out-outline'
 		},
@@ -62,9 +59,9 @@ export class HeaderComponent implements OnInit {
 	}
 
 	public openSearch(): void {
-		this.searchService.activateSearch('');
+		this.searchService.activateSearch(this.search);
 	}
-		
+
 	ngOnInit(): void {
 		let currentTheme = this.themeService.currentTheme;
 			

@@ -1,8 +1,11 @@
 <div class="item-container">
 	<img class="poster" [src]="movie.poster" />
 	<div class="info">
-		<h1>{{ movie.nome }}</h1>
-		<h5>{{ movie.diretor }}</h5>
+		<div>
+			<h1>{{ movie.nome }}</h1>
+			<h5>{{ movie.diretor }}</h5>
+		</div>
+
 		<div>{{ movie.genero }} - {{ movie.ano }}</div>
 		<div>{{ movie.descricao }}</div>
 	</div>

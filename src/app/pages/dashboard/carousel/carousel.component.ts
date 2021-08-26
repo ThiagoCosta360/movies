@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NbSearchService } from '@nebular/theme';
 import { Movie } from 'src/app/resources/interfaces/movie.interface';
+import { MoviesService } from 'src/app/resources/services/movies.service';
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation } from 'swiper';
@@ -18,16 +19,15 @@ export class CarouselComponent implements OnInit {
 	public movies: Movie[]
 
 	constructor(
-		private route: ActivatedRoute,
-		private searchService: NbSearchService
+		private readonly route: ActivatedRoute,
+		private readonly searchService: NbSearchService,
+		private readonly moviesService: MoviesService
 	) { 
 		this.movies = this.route.snapshot.data['movies'];
 		this.searchService.onSearchSubmit()
 			.subscribe(
 				(search) => {
-					this.movies = this.movies.filter(
-						(movie) => movie.nome.includes(search.term)
-					);
+					this.movies = this.moviesService.get(search.term);
 				},
 				(error) => console.error(error)
 			);
@@ -35,6 +35,5 @@ export class CarouselComponent implements OnInit {
 
 	ngOnInit(): void {
 	}
-
 
 }
