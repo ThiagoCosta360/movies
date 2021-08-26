@@ -17,7 +17,7 @@ import { DashboardModule } from './pages/dashboard/dashboard.module';
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
-		NbThemeModule.forRoot({ name: 'default' }),
+		NbThemeModule.forRoot({ name: 'corporate' }),
 		NbSidebarModule.forRoot(),
 		NbMenuModule.forRoot(),
 		AuthModule,

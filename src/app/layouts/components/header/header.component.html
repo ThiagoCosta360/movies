@@ -1,0 +1,12 @@
+<div class="header-container">
+	<div class="logo-container">
+		<div (click)="toggleSidebar.emit()" class="sidebar-toggle">
+			<nb-icon class="menu-icon" icon="menu-2-outline"></nb-icon>
+		</div>
+		<span class="logo">MOVIES</span>
+	</div>
+	<div class="options-container">
+		<app-theme-changer></app-theme-changer>
+		<app-user-dropdown></app-user-dropdown>
+	</div>
+</div>

@@ -1,5 +1,7 @@
 <nb-layout>
-	<nb-layout-header fixed> Insert header here </nb-layout-header>
+	<nb-layout-header fixed>
+		<app-header (toggleSidebar)="toggleSidebar()"></app-header>
+	</nb-layout-header>
 
 	<nb-sidebar tag="menu-sidebar" responsive>
 		<nb-menu [items]="menu"></nb-menu>

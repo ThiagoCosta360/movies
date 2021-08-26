@@ -16,8 +16,8 @@ export class DashboardComponent {
 		},
 		{
 			title: 'list',
-			icon: 'list-outline',
-			link: 'list'
+			link: 'list',
+			icon: 'list-outline'
 		}
 	];
 }

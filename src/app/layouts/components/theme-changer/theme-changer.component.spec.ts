@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServerErrorComponent } from './server-error.component';
+import { ThemeChangerComponent } from './theme-changer.component';
 
-describe('ServerErrorComponent', () => {
-	let component: ServerErrorComponent;
-	let fixture: ComponentFixture<ServerErrorComponent>;
+describe('ThemeChangerComponent', () => {
+	let component: ThemeChangerComponent;
+	let fixture: ComponentFixture<ThemeChangerComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ ServerErrorComponent ]
+			declarations: [ ThemeChangerComponent ]
 		})
 			.compileComponents();
 	});
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(ServerErrorComponent);
+		fixture = TestBed.createComponent(ThemeChangerComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
