@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/resources/services/auth.service';
 
 @Component({
 	selector: 'app-identification',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./identification.component.scss']
 })
 export class IdentificationComponent implements OnInit {
+	public name = new FormControl('', [Validators.required, Validators.minLength(3)])
 
-	constructor() { }
+	constructor(
+		private authService: AuthService
+	) { }
 
 	ngOnInit(): void {
+	}
+
+	login(): void {
+		if (this.name.valid){
+			this.authService.login(this.name.value);
+		} 
 	}
 
 }

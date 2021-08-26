@@ -1,1 +1,8 @@
-<p>identification works!</p>
+<input
+	type="text"
+	nbInput
+	placeholder="Nome"
+	[formControl]="name"
+	[status]="name.valid ? 'basic' : 'danger'"
+/>
+<button nbButton status="success" (click)="login()">Parece Bom</button>

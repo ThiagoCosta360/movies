@@ -4,8 +4,8 @@ import { IdentificationComponent } from './identification/identification.compone
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { LayoutsModule } from 'src/app/layouts/layouts.module';
-
-
+import { NbButtonModule, NbInputModule } from '@nebular/theme';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [
@@ -16,6 +16,10 @@ import { LayoutsModule } from 'src/app/layouts/layouts.module';
 		CommonModule,
 		AuthRoutingModule,
 		LayoutsModule,
+		NbInputModule,
+		NbButtonModule,
+		FormsModule,
+		ReactiveFormsModule,
 	]
 })
 export class AuthModule { }

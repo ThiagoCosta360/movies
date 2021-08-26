@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NbMenuItem, NbMenuService } from '@nebular/theme';
 import { filter, map } from 'rxjs/operators';
+import { AuthService } from 'src/app/resources/services/auth.service';
 
 
 @Component({
@@ -9,8 +10,8 @@ import { filter, map } from 'rxjs/operators';
 	styleUrls: ['./user-dropdown.component.scss']
 })
 export class UserDropdownComponent implements OnInit {
-	
-	items: NbMenuItem[] = [
+	public user: string
+	public items: NbMenuItem[] = [
 		{ title: 'Profile',
 			icon: 'person-outline'
 		},
@@ -20,8 +21,10 @@ export class UserDropdownComponent implements OnInit {
 	];
 
 	constructor(
-	private nbMenuService: NbMenuService, 
+		private nbMenuService: NbMenuService, 
+		private authService: AuthService
 	) {
+		this.user = authService.user;
 	}
 	
 	ngOnInit(): void {
@@ -30,7 +33,13 @@ export class UserDropdownComponent implements OnInit {
 				filter(({ tag }) => tag === 'my-context-menu'),
 				map(({ item: { title } }) => title),
 			)
-			.subscribe(title => console.log(`${title} was clicked!`));
+			.subscribe(title => {
+				console.log(title);
+				switch(title){
+				case 'Logout':
+					this.authService.logout();
+				}
+			});
 	}
 }
 	

@@ -7,7 +7,9 @@
 		<nb-menu [items]="menu"></nb-menu>
 	</nb-sidebar>
 
-	<nb-layout-column> </nb-layout-column>
+	<nb-layout-column>
+		<ng-content></ng-content>
+	</nb-layout-column>
 
 	<nb-layout-footer fixed> Insert footer here </nb-layout-footer>
 </nb-layout>

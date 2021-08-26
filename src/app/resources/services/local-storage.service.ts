@@ -6,11 +6,7 @@ import { base64, decrypt, encrypt } from '../utils/crypto-methods';
 })
 export class LocalStorageService {
 	public keys = {
-		TOKEN: 'token',
-		USER_ID: 'user_id',
 		USER: 'user',
-		FEATURES: 'features',
-		EMAIL: 'email',
 		THEME: 'theme',
 		LANGUAGE: 'language',
 	};
