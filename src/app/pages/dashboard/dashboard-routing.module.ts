@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MoviesResolver } from 'src/app/resources/resolvers/movies.resolver';
-import { CarrosselComponent } from './carrossel/carrossel.component';
+import { CarouselComponent } from './carousel/carousel.component';
 import { DashboardComponent } from './dashboard.component';
 import { ListComponent } from './list/list.component';
 
@@ -11,7 +11,7 @@ const routes: Routes = [
 		children: [
 			{
 				path: 'carrossel',
-				component: CarrosselComponent,
+				component: CarouselComponent,
 				resolve: { movies: MoviesResolver}
 			},
 			{

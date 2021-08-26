@@ -1,0 +1,26 @@
+@import "../../../../themes.scss";
+
+@include nb-install-component() {
+	.footer-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		.socials {
+			a {
+				.social {
+					font-size: 2rem;
+				}
+				padding: 0.4rem;
+				color: nb-theme(text-hint-color);
+				transition: color ease-out 0.1s;
+
+				&:hover {
+					color: nb-theme(text-basic-color);
+				}
+			}
+		}
+	}
+}

@@ -11,7 +11,7 @@ export class DashboardComponent {
 		{
 			title: 'carrosel',
 			link: 'carrossel',
-			icon: 'menu-arrow-outline',
+			icon: 'swap-outline',
 			home: true
 		},
 		{

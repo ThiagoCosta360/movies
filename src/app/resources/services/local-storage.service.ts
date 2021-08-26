@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { base64, decrypt, encrypt } from '../utils/crypto-methods';
+// import { base64, decrypt, encrypt } from '../utils/crypto-methods';
 
 @Injectable({
 	providedIn: 'root',
@@ -20,19 +20,22 @@ export class LocalStorageService {
 	}
 
 	public has(key: string): boolean {
-		return 	!!localStorage.getItem(base64(key));
+		return 	!!localStorage.getItem((key));
 	}
 
 	private getItem(key: any): string {
-		return decrypt(localStorage.getItem(base64(key)));
+		let returnitem
+		returnitem = localStorage.getItem((key))
+		if (!returnitem) returnitem=''
+		return returnitem;
 	}
 
 	private setItem(key: any, value: any): void {
-		localStorage.setItem(base64(key), encrypt(value));
+		localStorage.setItem((key), (value));
 	}
 
 	public delete(key: string): void {
-		localStorage.removeItem(base64(key));
+		localStorage.removeItem((key));
 	}
 
 	public clearAll(): void {
